@@ -30,27 +30,39 @@ namespace Centros_de_Triaje
         {
 
             string seleccion = " ";
-            if (radioButtonFemenino.Checked){
-                seleccion = "F";
-            }
-            if (radioButtonMasculino.Checked) {
-                seleccion = "M";
-            }
-            Persona oPersona = new Persona() {
-                identidad = txtIdentidad.Text,
-                primerNombre = txtPrimerNombre.Text,
-                segundoNombre = txtSegundoNombre.Text,
-                primerApellido = txtPrimerApellido.Text,
-                segundoApellido = txtSegundoApellido.Text,
-                fechaNacimiento = monthCalendar1.SelectionRange.Start.ToShortDateString().Replace('/','-'),
-                sexo = seleccion,
-            };
+            if (comprobarVacios() == false)
+            {
+                if (radioButtonFemenino.Checked)
+                {
+                    seleccion = "F";
+                }
+                if (radioButtonMasculino.Checked)
+                {
+                    seleccion = "M";
+                }
+                Persona oPersona = new Persona()
+                {
+                    identidad = txtIdentidad.Text,
+                    primerNombre = txtPrimerNombre.Text,
+                    segundoNombre = txtSegundoNombre.Text,
+                    primerApellido = txtPrimerApellido.Text,
+                    segundoApellido = txtSegundoApellido.Text,
+                    fechaNacimiento = monthCalendar1.SelectionRange.Start.ToShortDateString().Replace('/', '-'),
+                    sexo = seleccion,
+                };
 
-            bool respuesta = PersonaLogic.Instancia.Guardar(oPersona);
+                bool respuesta = PersonaLogic.Instancia.Guardar(oPersona);
 
-            if (respuesta) {
-                mostrarPersonas();
+                if (respuesta)
+                {
+                    GlobalVariables.mostrarMensajeRegistroExitoso();
+                    mostrarPersonas();
+                }
             }
+            else {
+                GlobalVariables.mostrarMensajeErrorVacio();
+            }
+            
 
         }
 
@@ -73,5 +85,16 @@ namespace Centros_de_Triaje
             formMenu.Show();
 
         }
+
+        private bool comprobarVacios() {
+            bool vacio = true;
+            if (txtIdentidad.Text != "" && txtPrimerApellido.Text != "" && txtPrimerNombre.Text != "" && txtSegundoApellido.Text != "" && txtSegundoNombre.Text != "") {
+                if (radioButtonFemenino.Checked || radioButtonMasculino.Checked) {
+                    vacio = false;
+                }
+            }
+            return vacio;
+        }
+
     }
 }

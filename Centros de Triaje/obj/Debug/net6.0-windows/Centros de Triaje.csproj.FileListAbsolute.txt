@@ -38,3 +38,4 @@ C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_
 C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fLogin.resources
 C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.Properties.Resources.resources
 C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fUsuarios.resources
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fPruebas.resources

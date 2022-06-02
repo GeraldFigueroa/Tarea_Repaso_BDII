@@ -19,6 +19,7 @@ namespace Centros_de_Triaje
         {
             InitializeComponent();
             mostrarUsuarios();
+            mostrarEmpleados();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -55,20 +56,17 @@ namespace Centros_de_Triaje
 
                     if (respuesta)
                     {
+                        GlobalVariables.mostrarMensajeRegistroExitoso();
                         mostrarUsuarios();
                     }
                 }
                 else
                 {
-                    const string mensaje = "Las contraseñas no coinciden. Verifique sus datos.";
-                    const string caption = "Mensaje del sistema";
-                    var result = MessageBox.Show(mensaje, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    GlobalVariables.mostrarMensajeErrorContrasenia();
                 }
             }
             else {
-                const string mensaje = "No se pueden dejar campos vacios. Por favor, ingresa tus datos.";
-                const string caption = "Mensaje del sistema";
-                var result = MessageBox.Show(mensaje, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GlobalVariables.mostrarMensajeErrorVacio();
             }            
                         
         }
@@ -87,6 +85,12 @@ namespace Centros_de_Triaje
         {
             dgvUsuarios.DataSource = null;
             dgvUsuarios.DataSource = UsuariosLogic.Instancia.Listar();
+        }
+
+        public void mostrarEmpleados()
+        {
+            dgvEmpleados.DataSource = null;
+            dgvEmpleados.DataSource = EmpleadosLogic.InstanciaP.Listar();
         }
 
     }

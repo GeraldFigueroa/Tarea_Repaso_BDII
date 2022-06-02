@@ -20,8 +20,8 @@ namespace Centros_de_Triaje
         private static string cadena = ConfigurationManager.ConnectionStrings["cadena"].ConnectionString;
         public fEmpleados()
         {
-            InitializeComponent();            
-            
+            InitializeComponent();
+
             mostrarCentrosDeTriaje();
             mostrarPuestosLaborales();
             mostrarEmpleados();
@@ -69,7 +69,7 @@ namespace Centros_de_Triaje
 
         }
 
-        private void mostrarPuestosLaborales(){
+        private void mostrarPuestosLaborales() {
 
             using (SQLiteConnection conexion = new SQLiteConnection(cadena))
             {
@@ -97,14 +97,14 @@ namespace Centros_de_Triaje
             {
                 conexion.Open();
                 string query = "SELECT * FROM centroTriaje";
-                SQLiteCommand cmd = new SQLiteCommand(query, conexion);                
+                SQLiteCommand cmd = new SQLiteCommand(query, conexion);
                 cmd.CommandType = System.Data.CommandType.Text;
                 using (SQLiteDataReader dr = cmd.ExecuteReader())
                 {
-                    while (dr.Read()){
+                    while (dr.Read()) {
                         string tempID = dr["codigo"].ToString();
                         string tempNombre = dr["nombre"].ToString();
-                        if (tempNombre.Equals(seleccion)){
+                        if (tempNombre.Equals(seleccion)) {
                             respuesta = tempID;
                         }
                     }
@@ -143,32 +143,59 @@ namespace Centros_de_Triaje
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string seleccion = " ";
-            string seleccionListaCentro = listBoxCentroTriajes.SelectedItem.ToString();
-            string seleccionListaLaboral = listBoxPuestoLaboral.SelectedItem.ToString();
-            if (radioButtonFemenino.Checked){
-                seleccion = "F";
-            }
-            if (radioButtonMasculino.Checked){
-                seleccion = "M";
-            }
-            Empleados oEmpleado = new Empleados() {
-                identidad = txtIdentidad.Text,
-                primerNombre = txtPrimerNombre.Text,
-                segundoNombre = txtSegundoNombre.Text,
-                primerApellido = txtPrimerApellido.Text,
-                segundoApellido = txtSegundoApellido.Text,
-                fechaNacimiento = monthCalendar1.SelectionRange.Start.ToShortDateString().Replace('/', '-'),
-                sexo = seleccion,
-                puestoLaboralID = buscarIDPuesto(seleccionListaLaboral),
-                codigoCentroTriaje = buscarCodigoCentro(seleccionListaCentro)
-            };
-
-            bool respuesta = EmpleadosLogic.InstanciaP.Guardar(oEmpleado);
-
-            if (respuesta)
+            if (comprobarVacios() == false)
             {
-                mostrarEmpleados();
+                string seleccionListaCentro = listBoxCentroTriajes.SelectedItem.ToString();
+                string seleccionListaLaboral = listBoxPuestoLaboral.SelectedItem.ToString();
+                if (radioButtonFemenino.Checked)
+                {
+                    seleccion = "F";
+                }
+                if (radioButtonMasculino.Checked)
+                {
+                    seleccion = "M";
+                }
+                Empleados oEmpleado = new Empleados()
+                {
+                    identidad = txtIdentidad.Text,
+                    primerNombre = txtPrimerNombre.Text,
+                    segundoNombre = txtSegundoNombre.Text,
+                    primerApellido = txtPrimerApellido.Text,
+                    segundoApellido = txtSegundoApellido.Text,
+                    fechaNacimiento = monthCalendar1.SelectionRange.Start.ToShortDateString().Replace('/', '-'),
+                    sexo = seleccion,
+                    puestoLaboralID = buscarIDPuesto(seleccionListaLaboral),
+                    codigoCentroTriaje = buscarCodigoCentro(seleccionListaCentro)
+                };
+
+                bool respuesta = EmpleadosLogic.InstanciaP.Guardar(oEmpleado);
+
+                if (respuesta)
+                {
+                    GlobalVariables.mostrarMensajeRegistroExitoso();
+                    mostrarEmpleados();
+                }
             }
+            else {
+                GlobalVariables.mostrarMensajeErrorVacio();
+            }
+            
+
+        }
+
+        private bool comprobarVacios() {
+
+            bool vacio = true;
+            if (txtIdentidad.Text != "" && txtPrimerNombre.Text != "" && txtSegundoNombre.Text != "" && txtPrimerApellido.Text != "" && txtSegundoApellido.Text != "") {
+                if (radioButtonFemenino.Checked || radioButtonMasculino.Checked) {
+                    if (listBoxCentroTriajes.SelectedIndex == 0 || listBoxCentroTriajes.SelectedIndex == 1 || listBoxCentroTriajes.SelectedIndex == 2) {
+                        if (listBoxPuestoLaboral.SelectedIndex == 0 || listBoxPuestoLaboral.SelectedIndex == 1 || listBoxPuestoLaboral.SelectedIndex == 2 || listBoxPuestoLaboral.SelectedIndex == 3 || listBoxPuestoLaboral.SelectedIndex == 4 || listBoxPuestoLaboral.SelectedIndex == 5) {
+                            vacio = false;
+                        }
+                    }
+                }
+            }
+            return vacio;
 
         }
 

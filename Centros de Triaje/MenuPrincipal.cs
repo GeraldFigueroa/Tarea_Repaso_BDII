@@ -84,5 +84,12 @@ namespace Centros_de_Triaje
             formLogin.Show();
 
         }
+
+        private void btnPruebas_Click(object sender, EventArgs e)
+        {
+            fPruebas formPruebas = new fPruebas();
+            this.Visible = false;
+            formPruebas.Show();
+        }
     }
 }

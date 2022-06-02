@@ -23,37 +23,48 @@ namespace Centros_de_Triaje
             InitializeComponent();
             mostrarCentrosDeTriaje();
             mostrarConsultas();
+            mostrarPersonas();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             string posneg = " ";
-            if (comboBoxCovid.SelectedIndex == 0) {
-                posneg = "P";
-            }
-            if (comboBoxCovid.SelectedIndex == 1) {
-                posneg = "N";
-            }   
-            string seleccionListaCentro = listBoxCentroTriajes.SelectedItem.ToString();
-            Consultas oConsulta = new Consultas()
+            if (comprobarVacios() == false)
             {
-                   
-                identidadPersona = txtIdentidadPersona.Text,
-                identidadPersonal = txtIdentidadPersonal.Text,
-                codigoCentroTriaje = buscarCodigoCentro(seleccionListaCentro),
-                fechaHoraConsulta = monthCalendarConsulta.SelectionRange.Start.ToShortDateString().Replace('/', '-'),
-                fechaInicioSintomas = monthCalendarSintomas.SelectionRange.Start.ToShortDateString().Replace('/', '-'),
-                comentarios = richtxtComentarios.Text,
-                diagnosticoFinal = richtxtDiagnostico.Text,
-                positivoNegativo = posneg,
-            };
+                if (comboBoxCovid.SelectedIndex == 0)
+                {
+                    posneg = "P";
+                }
+                if (comboBoxCovid.SelectedIndex == 1)
+                {
+                    posneg = "N";
+                }
+                string seleccionListaCentro = listBoxCentroTriajes.SelectedItem.ToString();
+                Consultas oConsulta = new Consultas()
+                {
 
-            bool respuesta = ConsultasLogic.Instancia.Guardar(oConsulta);
+                    identidadPersona = txtIdentidadPersona.Text,
+                    identidadPersonal = txtIdentidadPersonal.Text,
+                    codigoCentroTriaje = buscarCodigoCentro(seleccionListaCentro),
+                    fechaHoraConsulta = monthCalendarConsulta.SelectionRange.Start.ToShortDateString().Replace('/', '-'),
+                    fechaInicioSintomas = monthCalendarSintomas.SelectionRange.Start.ToShortDateString().Replace('/', '-'),
+                    comentarios = richtxtComentarios.Text,
+                    diagnosticoFinal = richtxtDiagnostico.Text,
+                    positivoNegativo = posneg,
+                };
 
-            if (respuesta)
-            {
-                mostrarConsultas();
+                bool respuesta = ConsultasLogic.Instancia.Guardar(oConsulta);
+
+                if (respuesta)
+                {
+                    GlobalVariables.mostrarMensajeRegistroExitoso();
+                    mostrarConsultas();
+                }
             }
+            else {
+                GlobalVariables.mostrarMensajeErrorVacio();
+            }
+            
         }
 
         public string buscarCodigoCentro(string seleccion)
@@ -112,6 +123,14 @@ namespace Centros_de_Triaje
 
         }
 
+        public void mostrarPersonas()
+        {
+
+            dgvPersonas.DataSource = null;
+            dgvPersonas.DataSource = PersonaLogic.Instancia.Listar();
+
+        }
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             MenuPrincipal formMenu = new MenuPrincipal();
@@ -127,7 +146,22 @@ namespace Centros_de_Triaje
         private void txtIdentidadPersona_TextChanged(object sender, EventArgs e)
         {
 
-        }       
+        }
+
+        private bool comprobarVacios() {
+            
+            bool vacio = true;
+            if (txtIdentidadPersona.Text != "" && txtIdentidadPersonal.Text != "" && richtxtComentarios.Text != "" && richtxtDiagnostico.Text != "") {
+                if (listBoxCentroTriajes.SelectedIndex == 0 || listBoxCentroTriajes.SelectedIndex == 1 || listBoxCentroTriajes.SelectedIndex == 2) {
+                    if (comboBoxCovid.SelectedIndex == 0 || comboBoxCovid.SelectedIndex == 1)
+                    {
+                        vacio = false;
+                    }
+                }
+            }
+            return vacio;
+
+        }
 
     }
 }

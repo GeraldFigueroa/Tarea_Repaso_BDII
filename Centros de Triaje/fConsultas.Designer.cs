@@ -49,7 +49,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.comboBoxCovid = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.dgvPersonas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -85,9 +88,9 @@
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(414, 44);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(141, 20);
+            this.label8.Size = new System.Drawing.Size(143, 20);
             this.label8.TabIndex = 62;
-            this.label8.Text = "Listado de personas";
+            this.label8.Text = "Listado de consultas";
             // 
             // dgvEmpleados
             // 
@@ -96,7 +99,7 @@
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.RowHeadersWidth = 51;
             this.dgvEmpleados.RowTemplate.Height = 29;
-            this.dgvEmpleados.Size = new System.Drawing.Size(813, 239);
+            this.dgvEmpleados.Size = new System.Drawing.Size(813, 151);
             this.dgvEmpleados.TabIndex = 61;
             // 
             // btnAgregar
@@ -187,7 +190,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(379, 338);
+            this.label4.Location = new System.Drawing.Point(379, 451);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(172, 20);
             this.label4.TabIndex = 69;
@@ -195,24 +198,24 @@
             // 
             // richtxtComentarios
             // 
-            this.richtxtComentarios.Location = new System.Drawing.Point(379, 367);
+            this.richtxtComentarios.Location = new System.Drawing.Point(379, 474);
             this.richtxtComentarios.Name = "richtxtComentarios";
-            this.richtxtComentarios.Size = new System.Drawing.Size(848, 207);
+            this.richtxtComentarios.Size = new System.Drawing.Size(848, 160);
             this.richtxtComentarios.TabIndex = 70;
             this.richtxtComentarios.Text = "";
             // 
             // richtxtDiagnostico
             // 
-            this.richtxtDiagnostico.Location = new System.Drawing.Point(379, 628);
+            this.richtxtDiagnostico.Location = new System.Drawing.Point(379, 678);
             this.richtxtDiagnostico.Name = "richtxtDiagnostico";
-            this.richtxtDiagnostico.Size = new System.Drawing.Size(848, 207);
+            this.richtxtDiagnostico.Size = new System.Drawing.Size(848, 157);
             this.richtxtDiagnostico.TabIndex = 72;
             this.richtxtDiagnostico.Text = "";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(379, 599);
+            this.label5.Location = new System.Drawing.Point(379, 655);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(122, 20);
             this.label5.TabIndex = 71;
@@ -238,11 +241,32 @@
             this.label7.TabIndex = 74;
             this.label7.Text = "Resultado de COVID";
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(414, 240);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(141, 20);
+            this.label10.TabIndex = 76;
+            this.label10.Text = "Listado de personas";
+            // 
+            // dgvPersonas
+            // 
+            this.dgvPersonas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPersonas.Location = new System.Drawing.Point(414, 263);
+            this.dgvPersonas.Name = "dgvPersonas";
+            this.dgvPersonas.RowHeadersWidth = 51;
+            this.dgvPersonas.RowTemplate.Height = 29;
+            this.dgvPersonas.Size = new System.Drawing.Size(813, 151);
+            this.dgvPersonas.TabIndex = 75;
+            // 
             // fConsultas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1284, 953);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.dgvPersonas);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.comboBoxCovid);
             this.Controls.Add(this.richtxtDiagnostico);
@@ -268,6 +292,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de consultas";
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPersonas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,5 +321,7 @@
         private Label label5;
         private ComboBox comboBoxCovid;
         private Label label7;
+        private Label label10;
+        private DataGridView dgvPersonas;
     }
 }

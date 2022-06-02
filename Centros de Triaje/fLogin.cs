@@ -42,25 +42,19 @@ namespace Centros_de_Triaje
                 bool respuesta = buscarUsuarioContrasenia(txtUsuario.Text, txtContrasenia.Text);
                 if (respuesta == true)
                 {
-                    const string mensaje = "Usuario y contraseña correctos. ¡Bienvenido!";
-                    const string caption = "Mensaje del sistema";
-                    var result = MessageBox.Show(mensaje, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GlobalVariables.mostrarMensajeBienvenida();
                     MenuPrincipal formMenu = new MenuPrincipal();
                     this.Visible = false;
                     formMenu.Show();
                 }
                 else
                 {
-                    const string mensaje = "Usuario o contraseña incorrectos. Intentelo de nuevo.";
-                    const string caption = "Mensaje del sistema";
-                    var result = MessageBox.Show(mensaje, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    GlobalVariables.mostrarMensajeErrorLogin();
                 }
             }
             else 
             {
-                const string mensaje = "No se pueden dejar campos vacios. Por favor, ingresa tus datos.";
-                const string caption = "Mensaje del sistema";
-                var result = MessageBox.Show(mensaje, caption, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                GlobalVariables.mostrarMensajeErrorVacio();
             }
             
         }        

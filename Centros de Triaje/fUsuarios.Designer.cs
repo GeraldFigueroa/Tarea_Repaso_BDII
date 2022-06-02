@@ -44,7 +44,10 @@
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
             // 
             // txtContrasenia
@@ -168,7 +171,7 @@
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.RowHeadersWidth = 51;
             this.dgvUsuarios.RowTemplate.Height = 29;
-            this.dgvUsuarios.Size = new System.Drawing.Size(588, 366);
+            this.dgvUsuarios.Size = new System.Drawing.Size(588, 179);
             this.dgvUsuarios.TabIndex = 63;
             // 
             // btnCancelar
@@ -191,11 +194,32 @@
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(476, 278);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(156, 20);
+            this.label7.TabIndex = 69;
+            this.label7.Text = "Listado de empleados";
+            // 
+            // dgvEmpleados
+            // 
+            this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmpleados.Location = new System.Drawing.Point(476, 301);
+            this.dgvEmpleados.Name = "dgvEmpleados";
+            this.dgvEmpleados.RowHeadersWidth = 51;
+            this.dgvEmpleados.RowTemplate.Height = 29;
+            this.dgvEmpleados.Size = new System.Drawing.Size(588, 179);
+            this.dgvEmpleados.TabIndex = 68;
+            // 
             // fUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1096, 592);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.dgvEmpleados);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.label8);
@@ -217,6 +241,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fUsuarios";
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -239,5 +264,7 @@
         private DataGridView dgvUsuarios;
         private Button btnCancelar;
         private Button btnAgregar;
+        private Label label7;
+        private DataGridView dgvEmpleados;
     }
 }

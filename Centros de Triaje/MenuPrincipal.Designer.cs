@@ -97,6 +97,7 @@
             this.btnPruebas.TabIndex = 5;
             this.btnPruebas.Text = "REGISTRAR PRUEBA";
             this.btnPruebas.UseVisualStyleBackColor = true;
+            this.btnPruebas.Click += new System.EventHandler(this.btnPruebas_Click);
             // 
             // pictureBox1
             // 
