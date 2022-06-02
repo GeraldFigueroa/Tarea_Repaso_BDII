@@ -1,0 +1,40 @@
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\CentrosDeTriaje.db
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\Centros de Triaje.exe
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\Centros de Triaje.deps.json
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\Centros de Triaje.runtimeconfig.json
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\Centros de Triaje.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\Centros de Triaje.pdb
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.csproj.AssemblyReference.cache
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.csproj.GenerateResource.cache
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.AssemblyInfoInputs.cache
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.AssemblyInfo.cs
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.csproj.CoreCompileInputs.cache
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\refint\Centros de Triaje.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.pdb
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.genruntimeconfig.cache
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\ref\Centros de Triaje.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\Centros de Triaje.dll.config
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\EntityFramework.SqlServer.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\EntityFramework.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\System.Data.SQLite.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\System.Data.SQLite.EF6.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\linux-x64\native\SQLite.Interop.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\osx-x64\native\SQLite.Interop.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\win-x64\native\SQLite.Interop.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\win-x86\native\SQLite.Interop.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros de Triaje.csproj.CopyComplete
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.MenuPrincipal.resources
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fEmpleados.resources
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fPersonas.resources
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fConsultas.resources
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fLogin.resources
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.Properties.Resources.resources
+C:\Users\Ismael\source\repos\Centros de Triaje\obj\Debug\net6.0-windows\Centros_de_Triaje.fUsuarios.resources
